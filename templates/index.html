@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="/static/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="/static/materialize.min.js"></script>
+
+
+<style>
+    input {
+        border: 2px;
+        border-bottom-style: solid;
+        border-top-style: none;
+        border-left-style: none;
+        border-right-style: none;
+        border-color: orange;
+    }
+
+    button {
+        background-color: #CCCCCC;
+        border: 0px;
+        border-radius: 2px;
+    }
+
+    label {
+        font-weight: 900;
+    }
+
+    .short {
+        width: 20px;
+    }
+
+    .result {
+        font-size: 40px;
+        color: orange;
+    }
+
+    .title {
+        font-weight: 700;
+        color: gray;
+    }
+
+    .hint_title {
+        color: #AAAAAA;
+    }
+
+    .hint {
+        color: #AAAAAA;
+    }
+
+    .AC {
+        color: green;
+    }
+
+    .NE {
+        color: black;
+    }
+
+    .WA {
+        color: red;
+    }
+</style>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>議題事件分析器</title>
+</head>
+
+<body>
+    <nav>
+        <a class="brand-logo"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;議題事件分析器</a>
+    </nav>
+    <div class="row">
+        <div class="col s9">
+
+            <br>
+            <div class="row">
+                <div class="col s6">
+                    <select class="browser-default" id="urlType" onchange="toggleInputType()">
+                        <option value="ptt">PTT</option>
+                    </select>
+                </div>
+                <div class="col s6">
+                    <select class="browser-default" id="modelType" onchange="InputModelType()">
+                        <option value="T">T model</option>
+                        <option value="D">D model</option>
+                        <option value="F">F model</option>
+                    </select>
+                </div>
+            </div>
+            <form id="urlForm">
+                <label for="urlInput">網址：</label>
+                <input type="text" id="urlInput" name="url" onchange='getlen()'>
+                <label for="urlInput">限制留言分析數量：</label>
+                <input type="text" id="limit" name="comment-limit" class="short">
+                <button class="waves-effect waves-light btn" type="submit">提交</button>
+            </form>
+            <a class="hint_title"> The number of comments in this page: </a><br>
+            <div class='hint' id="len_post"></div>
+
+            <div class="row">
+                <div class="col s3">
+                    <a class='title'> Content analysis result: </a><br>
+                    <div class='result' id="result"></div><br>
+                </div>
+                <div class="col s3">
+                    <a class="title"> Comment analysis result: </a><br>
+                    <div class='result' id="result1"></div><br>
+                </div>
+                <div class="col s3">
+                    <a class="title"> Positive rate: </a><br>
+                    <div class='result' id="prate"></div><br>
+                </div>
+                <div class="col s3">
+                    <a class="title"> Neutral rate: </a><br>
+                    <div class='result' id="neurate"></div><br>
+                </div>
+                <div class="col s3">
+                    <a class="title"> Negtive rate: </a><br>
+                    <div class='result' id="negrate"></div><br>
+                </div>
+                <div class="col s3">
+                    <a class="title"> Comment analysised: </a><br>
+                    <div class='result' id="len"></div><br>
+                </div>
+            </div>
+        </div>
+        <div class="col s3">
+            <a class='title'> Progress: </a><br>
+            <div class='result' id="progress"></div><br>
+            <div class="progressbar">
+                <div class="determinate" style="width: 70%"></div>
+            </div>
+            <a class="title">Info:</a><br>
+            <div id="info"></div>
+        </div>
+        <script src="/static/script.js"></script>
+    </div>
+</body>
+
+</html>
