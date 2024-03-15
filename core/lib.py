@@ -18,7 +18,7 @@ def parse_page_html(html,tag):
 
 def write_to_file(x: str,name: str):
     f = open(name,'w',encoding = 'UTF-8')
-    f.write(a)
+    f.write(x)
     f.close()
     return
 

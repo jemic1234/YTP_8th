@@ -3,16 +3,16 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
 
     const urlInput = document.getElementById('urlInput').value;
     const urlType = document.getElementById('urlType').value;
-    const limit = document.getElementById('limit').value;
+    const limit = document.getElementById('user').value;
     const model = document.getElementById('modelType').value;
 
     if(urlType === "ptt"){
         alert('submit success')
-        fetch('/craw?url=' + encodeURIComponent(urlInput) + '&limit=' + limit + '&model=' + model)
+        fetch('/userq?url=' + encodeURIComponent(urlInput) + '&user=' + limit + '&model=' + model)
         .then(response => response.text())
         .then(result => {
             const Rs = JSON.parse(result);
-            document.getElementById('result').textContent = Rs[0];
+            // document.getElementById('result').textContent = Rs[0];
             document.getElementById('result1').textContent = Rs[1];
             document.getElementById('prate').textContent = Rs[2];
             document.getElementById('neurate').textContent = Rs[3];
@@ -31,7 +31,7 @@ function get(x) {
 var timer,autolen;
 window.onload = function() {
     timer = setInterval(function() {
-        fetch('/progress')
+        fetch('/progressu')
         .then(response => response.text())
         .then(result => {
             const Rs = JSON.parse(result);
@@ -43,19 +43,6 @@ window.onload = function() {
             console.error('error:', error);
         });
     },100);
-    document.getElementById('urlInput').value = get('pre');
-    getlen();
-}
-function getlen() {
-    document.getElementById('len_post').innerHTML = '...';
-    fetch('/get_len?url=' + document.getElementById('urlInput').value)
-    .then(response => response.text())
-    .then(result => {
-        const Rs = JSON.parse(result);
-        if(Rs == ' ') document.getElementById('len_post').innerHTML = '';
-        else document.getElementById('len_post').innerHTML = Rs;
-    })
-    .catch(error => {
-        console.error('error:', error);
-    });
+    document.getElementById('urlInput').value = get('url');
+    document.getElementById('user').value = get('user');
 }

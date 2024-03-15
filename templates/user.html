@@ -95,18 +95,18 @@
             <form id="urlForm">
                 <label for="urlInput">網址：</label>
                 <input type="text" id="urlInput" name="url" onchange='getlen()'>
-                <label for="urlInput">限制留言分析數量：</label>
-                <input type="text" id="limit" name="comment-limit" class="short">
+                <label for="urlInput">使用者：</label>
+                <input type="text" id="user" name="comment-limit" class="short">
                 <button class="waves-effect waves-light btn" type="submit">提交</button>
             </form>
             <a class="hint_title"> The number of comments in this page: </a><br>
             <div class='hint' id="len_post"></div>
 
             <div class="row">
-                <div class="col s3">
+                <!-- <div class="col s3">
                     <a class='title'> Content analysis result: </a><br>
                     <div class='result' id="result"></div><br>
-                </div>
+                </div> -->
                 <div class="col s3">
                     <a class="title"> Comment analysis result: </a><br>
                     <div class='result' id="result1"></div><br>
@@ -138,7 +138,7 @@
             <a class="title">Info:</a><br>
             <div id="info"></div>
         </div>
-        <script src="/static/script.js"></script>
+        <script src="/static/user.js"></script>
     </div>
 </body>
 

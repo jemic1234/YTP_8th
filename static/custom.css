@@ -1,0 +1,57 @@
+
+input {
+    border: 2px;
+    border-bottom-style: solid;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-color: orange;
+}
+
+button {
+    background-color: #CCCCCC;
+    border: 0px;
+    border-radius: 2px;
+}
+
+label {
+    font-weight: 900;
+}
+
+.short {
+    width: 20px;
+}
+
+.result {
+    font-size: 40px;
+    color: orange;
+}
+
+.title {
+    font-weight: 700;
+    color: gray;
+}
+
+.hint_title {
+    color: #AAAAAA;
+}
+
+.hint {
+    color: #AAAAAA;
+}
+
+.AC {
+    color: green;
+}
+
+.NE {
+    color: black;
+}
+
+.WA {
+    color: red;
+}
+
+#username {
+    font-weight: 500;
+}
