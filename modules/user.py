@@ -14,6 +14,7 @@ def users():
 def userq():
 
     url = request.args.get('url')
+    brl = '/'.join(url.split('/')[::-1][1:][::-1]) + '/index.html'
     user = request.args.get('user') or ' '
     model = request.args.get('model')
     print(url,model);
@@ -61,11 +62,11 @@ def userq():
     if user == ' ':
         for i in userate:
             now = userate.get(i,[])
-            prate = f'{str(str(round((now.count(2) / len(now)) * 100,2)))}%'
-            neurate = f'{str(str(round((now.count(1) / len(now)) * 100,2)))}%'
-            negrate = f'{str(str(round((now.count(0) / len(now)) * 100,2)))}%'
+            dprate = f'{str(str(round((now.count(2) / len(now)) * 100,2)))}%'
+            dneurate = f'{str(str(round((now.count(1) / len(now)) * 100,2)))}%'
+            dnegrate = f'{str(str(round((now.count(0) / len(now)) * 100,2)))}%'
             ct = len(now)
-            writedata(f'{prate}\t{neurate}\t{negrate}\t{ct}',stable_hash(url + i),'user')
+            writedata(f'{dprate}\t{dneurate}\t{dnegrate}\t{ct}',stable_hash(brl + i),'user')
 
     return ['', s2, prate, neurate, negrate, len(f), preu]
 
