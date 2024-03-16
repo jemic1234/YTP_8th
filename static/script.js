@@ -19,6 +19,7 @@ document.getElementById('urlForm').addEventListener('submit', function(event) {
             document.getElementById('negrate').textContent = Rs[4];
             document.getElementById('len').textContent = Rs[5];
             document.getElementById('info').innerHTML = Rs[6];
+            document.getElementById('zz').innerHTML = Rs[7];
         })
         .catch(error => {
             console.error('error:', error);

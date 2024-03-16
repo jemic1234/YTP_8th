@@ -1,0 +1,3 @@
+data/result/*.json
+*/__pycache__/*
+data/*
